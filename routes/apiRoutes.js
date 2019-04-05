@@ -28,6 +28,7 @@ module.exports = function(app) {
       res.json(calendardb);
     });
   });
+
   // get user information
   app.get("/api/users", function(req, res) {
     db.Calendar.findAll(users).then(function(dbGetUsers) {
@@ -35,10 +36,10 @@ module.exports = function(app) {
     });
   });
 
-    // Get Calendar
-    app.get("/api/calendar/:id", function(req, res) {
-      db.Calendar.findAll(calendars, {where:{calendarID: req.param.id}}).then(function(dbGetCalendar) {
-        res.json(dbGetCalendar);
-      });
+  // Get Calendar
+  app.get("/api/calendar/:id", function(req, res) {
+    db.Calendar.findAll(calendars, {where:{calendarID: req.param.id}}).then(function(dbGetCalendar) {
+      res.json(dbGetCalendar);
     });
-
+  });
+};
