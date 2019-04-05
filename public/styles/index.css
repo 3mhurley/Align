@@ -1,0 +1,17 @@
+body {
+    background-color: #546e7a;
+    font-family: 'Aleo', serif;
+}
+
+h1 {
+    text-align: center;
+    color: #263238;
+}
+
+.btn-large {
+    background-color: #263238 !important;
+}
+
+.row {
+    margin-top: 350px;
+}
