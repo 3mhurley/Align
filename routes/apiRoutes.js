@@ -38,7 +38,11 @@ module.exports = function(app) {
 
   // Get Calendar
   app.get("/api/calendar/:id", function(req, res) {
-    db.Calendar.findAll(calendars, {where:{calendarID: req.param.id}}).then(function(dbGetCalendar) {
+    db.Calendar.findAll(calendars, {
+      where: {
+        calendarID: req.param.id
+      }
+    }).then(function(dbGetCalendar) {
       res.json(dbGetCalendar);
     });
   });
