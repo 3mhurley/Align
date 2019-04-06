@@ -1,15 +1,45 @@
+:root {
+  --main-color1: #4794B3;
+  --main-color2: #99E2FF;
+  --main-color3: #80DBFF;
+  --main-color4: #B37736;
+  --main-color5: #FFC380;
+  --main-color6: #FF99AD;
+  --main-bg-color: white;
+  --main-txt-color: black;
+  --main-padding: 15px; 
+}
+
 body {
-    background-color: #546e7a;
+    background-color: var(--main-bg-color);
     font-family: 'Aleo', serif;
 }
 
+.container {
+    padding-top: 250px;
+}
+
 h1 {
-    color: #263238;
-    font-size: 40px;
+    color: var(--main-color1);
 }
 
 .btn-large {
-    background-color: #263238 !important;
+    background-color: var(--main-color4) !important;
+    color: var(--main-bg-color) !important;
     height: 54px;
     width: 250px;
 }
+.click-animations button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background: #30cc8b;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
