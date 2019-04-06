@@ -4,11 +4,12 @@ body {
 }
 
 h1 {
-    /* text-align: center; */
     color: #263238;
     font-size: 40px;
 }
 
 .btn-large {
     background-color: #263238 !important;
+    height: 54px;
+    width: 250px;
 }
