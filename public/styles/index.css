@@ -4,14 +4,11 @@ body {
 }
 
 h1 {
-    text-align: center;
+    /* text-align: center; */
     color: #263238;
+    font-size: 40px;
 }
 
 .btn-large {
     background-color: #263238 !important;
-}
-
-.row {
-    margin-top: 350px;
 }
