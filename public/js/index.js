@@ -97,3 +97,27 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// jQuery-UI
+$( function() {
+  $( "#selectable" ).selectable();
+} );
+
+
+var result = $("#select-result").empty();
+  $(".ui-selected", this).each(function() {
+    result.append($(this).text());
+  })
+
+
+
+
+function Input (monday, tuesday, wednesday, thursday, friday, saturday, sunday) {
+  this.monday = monday;
+  this.tuesday = tuesday;
+  this.wednesday = wednesday;
+  this.thursday = thursday;
+  this.friday = friday;
+  this.saturday = saturday;
+  this.sunday = sunday;
+}

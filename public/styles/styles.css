@@ -1,3 +1,51 @@
+:root {
+  --main-color1: #4794B3;
+  --main-color2: #99E2FF;
+  --main-color3: #80DBFF;
+  --main-color4: #B37736;
+  --main-color5: #FFC380;
+  --main-color6: #FF99AD;
+  --main-bg-color: white;
+  --main-txt-color: black;
+  --main-padding: 15px; 
+}
+
 .list-group-item {
   line-height: 2.5;
 }
+
+/* Calendar Testing */
+#selectable .ui-state-default {
+  background: var(--main-color3);
+}
+
+#feedback {
+  font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+  background: var(--main-color1);
+}
+
+#selectable .ui-selected {
+  background: var(--main-color6);
+  color: white;
+}
+
+#selectable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* width: 450px; */
+}
+
+#selectable div {
+  margin: 3px;
+  padding: 1px;
+  /* float: left;
+  width: 100px;
+  height: 80px; */
+  font-size: 4em;
+  text-align: center;
+}
+
