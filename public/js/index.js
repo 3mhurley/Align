@@ -100,5 +100,5 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // jQuery-UI
 $( function() {
-  $( "#selectable" ).selectable();
+  $( ".selectable" ).selectable();
 } );
