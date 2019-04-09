@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
     Schedule.associate = function(models) {
       Schedule.belongsTo(models.Calendars, {
         foreignKey: {
-          Calendars_id
+          allowNull: false
         }
       });
     };
@@ -48,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
     Schedule.associate = function(models) {
       Schedule.belongsTo(models.Users, {
         foreignKey: {
-          Users_id
+          allowNull: false
         }
       });
     };

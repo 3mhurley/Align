@@ -47,3 +47,13 @@ module.exports = function(app) {
     });
   });
 };
+
+//route for suggesting
+app.get("/api/suggested-times", function(req, res) {
+  db.Schedule.count({
+    group: ['time'], 
+    having: Sequelize.literal('count(*) >1'), 
+  })
+}).then(function(dbSchedule) {
+  res.json(dbSchedule);
+});

@@ -1,3 +1,6 @@
+//var Sequelize = require("sequelize");
+//var sequelize = require("../config/connection.js");
+
 module.exports = function(sequelize, DataTypes) {
   var Calendars = sequelize.define("Calendars", {
     
@@ -29,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
   Calendars.associate = function(models) {
     Calendars.belongsTo(models.Users, {
       foreignKey: {
-        Users_id
+        allowNull: false
       }
     });
   };
