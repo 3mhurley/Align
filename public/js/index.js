@@ -1,19 +1,28 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+$(document).ready(function() {
+    
+    //add new calendar
+    $(".create-calendar").on("submit", function(event) {
+        event.preventDefault();
+
+        var calendar = new Calendar(calendarEl, {
+            events: [
+                {
+                    id: $('#id').val(),
+                    start: $('#start').val(),
+                    end: $("#end").val(),
+                },
+            ]
+        });
+
+        //send POST request
+        $.ajax("/api/calendar", {
+            type: "POST",
+            data: calendar
+        }).then(function() {
+            console.log("added new calendar");
+            location.reload();
+        });
     });
   },
   getExamples: function() {
@@ -101,4 +110,5 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 // jQuery-UI
 $(function() {
   $(".selectable").selectable();
+  
 });
