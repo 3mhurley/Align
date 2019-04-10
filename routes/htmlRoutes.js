@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // load calendar page 
   app.get("/calendar/:id", function(req, res) {
-    res.sendFile(path.join(__dirname, "../calendar.html"));
+    res.sendFile(path.join(__dirname, "../public/calendar.html"));
 
   });
 
