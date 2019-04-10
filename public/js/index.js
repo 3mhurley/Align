@@ -99,6 +99,6 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // jQuery-UI
-$( function() {
-  $( ".selectable" ).selectable();
-} );
+$(function() {
+  $(".selectable").selectable();
+});

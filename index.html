@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Align</title>
-    <link rel="stylesheet" href="public/styles/index.css">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
     <!-- Google Icon -->
@@ -15,51 +14,68 @@
     <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="public/styles/index.css">
 
 </head>
 
 <body>
-    <div class="animated bounceInDown container">
-        <div class="row">
-            <div class="col m4">
+    <div id="blue-page" class="block">
+        <nav class="pushpin-demo-nav" data-target="blue">
+            <div class="nav-wrapper blue-nav">
+                <a href="#" class="brand-logo" id="big-logo">Simple Calendar Sharing...</a>
+                <a href="#" class="center brand-logo" id="small-logo">Period</a>
             </div>
-            <div class="col m4 center-align">
-                <h1 class=""><strong>Align</strong></h1>
+        </nav>
+        <div class="animated bounceInDown container">
+            <div class="row">
+                <div class="col m4">
+                </div>
+                <div class="col m4 center-align">
+                    <h1 class=""><strong>Align</strong></h1>
+                </div>
+                <div class="col m4">
+                </div>
             </div>
-            <div class="col m4">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col l6 center-align">
-                <button class="center-align waves-effect waves-light btn-large">Create Calendar</button>
-            </div>
-            <div class="col l6 center-align">
-                <button class="waves-effect waves-light btn-large">Join Calendar</button>
+            <div class="row">
+                <div class="col l6 center-align">
+                    <button class="center-align waves-effect waves-light btn-large" href="/calendar">Create Calendar</button>
+                </div>
+                <div class="col l6 center-align">
+                    <button class="waves-effect waves-light btn-large" href="/calendar">Join Calendar</button>
+                </div>
             </div>
         </div>
     </div>
-    <!-- parallax -->
-    <!-- <div class="parallax-container">
-        <div class="info">
-            <div class="animated">
-                <h3>Who We Are</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis lacinia est. Nulla malesuada massa
-                    orci, vitae placerat lorem pharetra a.</p>
+    <div id="pink-page" class="block lighten-1">
+        <nav class="pushpin-demo-nav" data-target="">
+            <div class="nav-wrapper pink-nav">
+                <a href="#" class="brand-logo" id="big-logo">Simple Calendar Sharing...</a>
+                <a href="#" class="center brand-logo" id="small-logo">Period</a>
             </div>
-            <div class="animated">
-                <h3>What <strong>Align</strong> Is</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis lacinia est. Nulla malesuada massa
-                    orci, vitae placerat lorem pharetra a.</p>
+        </nav>
+        <div class="animated bounceInDown container">
+            <div class="row">
+                <div class="col m4">
+                </div>
+                <div class="col m4">
+                    <h1 class=""><strong>Who We Are</strong></h1>
+                </div>
+                <div class="col m4">
+                </div>
             </div>
-            <div class="animated">
-                <h3>How To USe</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis lacinia est. Nulla malesuada massa
-                    orci, vitae placerat lorem pharetra a.</p>
+            <div class="row">
+                <div class="col l6 center-align">
+                    <img src="" alt="">
+                </div>
+                <div class="col l6">
+                    <p>You would think scheduling a meeting would be simple these days with all the technology we have at our finger tips.</p>
+                    <p>We were tired of IMing, taking polls, having meetings about meetings. We created a simple sharing platform, to allow the masses to connect. Set your availability, share your calendar, have your meeting. Period.</p>
+                </div>
             </div>
         </div>
-    </div> -->
-    <!-- Compiled and minified JavaScript -->
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="public/js/homepage.js"></script>
 </body>
 
 </html>
