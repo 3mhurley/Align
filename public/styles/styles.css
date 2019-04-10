@@ -15,7 +15,7 @@
 }
 
 /* Calendar Testing */
-#selectable .ui-state-default {
+.selectable .ui-state-default {
   background: var(--main-color3);
 }
 
@@ -23,28 +23,28 @@
   font-size: 1.4em;
 }
 
-#selectable .ui-selecting {
+.selectable .ui-selecting {
   background: var(--main-color1);
 }
 
-#selectable .ui-selected {
+.selectable .ui-selected {
   background: var(--main-color6);
   color: white;
 }
 
-#selectable {
+.selectable {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* width: 450px; */
+  /* width: 30px */
 }
 
-#selectable div {
+.selectable dt {
   margin: 3px;
   padding: 1px;
-  /* float: left;
-  width: 100px;
-  height: 80px; */
+  /* float: left; */
+  width: 20px;
+  height: 20px;
   font-size: 4em;
   text-align: center;
 }
