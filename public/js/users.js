@@ -63,9 +63,3 @@ $(document).ready(function() {
 
 });
 
-
-
-// -render calendar from db
-// -create user
-// -select schedule times based on calendar 
-// -push schedule times to db

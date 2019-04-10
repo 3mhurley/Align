@@ -1,0 +1,29 @@
+{
+  "name": "AnneAndTheThreeStooges",
+  "version": "1.0.0",
+  "description": "## Our Story",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3mhurley/AnneAndTheThreeStooges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3mhurley/AnneAndTheThreeStooges/issues"
+  },
+  "homepage": "https://github.com/3mhurley/AnneAndTheThreeStooges#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "sequelize": "^5.2.15"
+  }
+}
