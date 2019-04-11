@@ -1,4 +1,4 @@
-var db = require("../models");
+//var db = require("../models");
 var path = require("path");
 
 module.exports = function(app) {
@@ -8,7 +8,7 @@ module.exports = function(app) {
   });
 
   // load calendar page 
-  app.get("/calendar/:id", function(req, res) {
+  app.get("/calendar", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/calendar.html"));
 
   });
