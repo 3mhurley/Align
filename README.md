@@ -4,6 +4,7 @@
 
 We started here...
 
-![Alt text](./public/images/Wireframe.jpg?raw=true "Wire Frame")
+![Wire Frame](public/images/Wireframe.png)
 
 And got to here...
+
