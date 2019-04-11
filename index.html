@@ -38,11 +38,23 @@
             </div>
             <div class="row">
                 <div class="col l6 center-align">
-                    <button class="center-align waves-effect waves-light btn-large" href="/calendar">Create Calendar</button>
+                    <button data-target="modal1" class="center-align waves-effect waves-light btn-large" href="/calendar">Create Calendar</button>
                 </div>
+                <!-- Modal Trigger -->
                 <div class="col l6 center-align">
-                    <button class="waves-effect waves-light btn-large" href="/calendar">Join Calendar</button>
+                    <button data-target="modal2" class="waves-effect waves-light btn-large modal-trigger" href="/calendar">Join Calendar</button>
                 </div>
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+                <!-- End Modal -->
             </div>
         </div>
     </div>
@@ -74,8 +86,11 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="public/js/homepage.js"></script>
-</body>
+    <!-- Materialize jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and Minified JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script></body>
+    <!-- JS file -->
+    <script type="text/javascript" src="public/js/homepage.js"></script>
 
 </html>
