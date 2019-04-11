@@ -21,7 +21,7 @@ module.exports = function(app) {
   app.get("/api/suggestions", function(req, res) {
     db.Schedule.count({
         group: ['start'], 
-        having: Sequelize.literal('count(*) > 1')
+        having: Sequelize.literal('count(start) > 1')
   }).then(function(dbSchedule) {
     res.json(dbSchedule);
     });

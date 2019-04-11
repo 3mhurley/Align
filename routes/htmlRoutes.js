@@ -7,10 +7,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
 
-  // load calendar page 
+  // create calendar  
   app.get("/calendar", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/calendar.html"));
+  });
 
+  // load calendar
+  app.get("/calendar", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/calendar.html"));
   });
 
   // Render 404 page for any unmatched routes

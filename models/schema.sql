@@ -1,10 +1,10 @@
 DROP DATABASE IF EXISTS align_db;
 CREATE DATABASE align_db
 
-
+USE align_db;
 CREATE TABLE `calendar`
 (
-  `id` int PRIMARY KEY,
+  `id` int PRIMARY KEY
 );
 
 CREATE TABLE `schedule`

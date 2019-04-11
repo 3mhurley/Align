@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  
+///////////////////////////////////////////////////////  
 
   //suggestions
   var suggestions = [];
