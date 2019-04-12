@@ -1,0 +1,44 @@
+:root {
+  --main-color1: #4794B3;
+  --main-color2: #99E2FF;
+  --main-color3: #80DBFF;
+  --main-color4: #B37736;
+  --main-color5: #FFC380;
+  --main-color6: #FF99AD;
+  --main-bg-color: white;
+  --main-txt-color: black;
+  --main-padding: 15px; 
+}
+
+.ui-datepicker {
+    background-color: white !important;
+}
+
+ /* label color */
+   .input-field label {
+     color: var(--main-color6);
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: var(--main-color3);
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid green;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: var(--main-color4);
+   }
+        
