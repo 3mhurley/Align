@@ -9,44 +9,23 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      user_id: {
+      username: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      monday: {
+      start: {
         type: DataTypes.INTEGER,
+        allowNull: false
       },
-      tuesday: {
+      end: {
         type: DataTypes.INTEGER,
-      },
-      wednesday: {
-        type: DataTypes.INTEGER,
-      },
-      thursday: {
-        type: DataTypes.INTEGER,
-      },
-      friday: {
-        type: DataTypes.INTEGER,
-      },
-      saturday: {
-        type: DataTypes.INTEGER,
-      },
-      sunday: {
-        type: DataTypes.INTEGER,
-      },
+        allowNull: false
+      }
     });
     
 
     Schedule.associate = function(models) {
       Schedule.belongsTo(models.Calendars, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
-
-    Schedule.associate = function(models) {
-      Schedule.belongsTo(models.Users, {
         foreignKey: {
           allowNull: false
         }
