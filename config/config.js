@@ -4,14 +4,14 @@ module.exports = {
   development: {
     database: "align_db",
     username: "root",
-    password: "Bubba&Poppy1",
+    password: process.env.PASSWORD,
     host: "localhost",
     dialect: "mysql"
   },
   test: {
     database: "align_db",
     username: "root",
-    password: "Bubba&Poppy1",
+    password: process.env.PASSWORD,
     host: "localhost",
     dialect: "mysql",
     logging: false
