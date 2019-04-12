@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Align</title>
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
+    <!-- Import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <!-- Materialize CSS min -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <div id="blue-page" class="block">
+        <nav class="pushpin-demo-nav" data-target="blue">
+            <div class="nav-wrapper blue-nav">
+                <a href="#" class="brand-logo" id="big-logo">Simple Calendar Sharing...</a>
+                <a href="#" class="center brand-logo" id="small-logo">Period</a>
+            </div>
+        </nav>
+        <div class="animated bounceInDown container">
+            <div class="row">
+                <div class="col m4">
+                </div>
+                <div class="col m4 center-align">
+                    <h1 class=""><strong>Align</strong></h1>
+                </div>
+                <div class="col m4">
+                </div>
+            </div>
+            <div class="row">
+                <!-- Create Modal -->
+                <div class="col l6 center-align">
+                    <button class="center-align waves-effect waves-light btn-large modal-trigger"
+                        href="#create-modal">Create Calendar</button>
+                </div>
+                <!-- Create Modal Structure -->
+                <div id="create-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="first_name" type="text" class="validate">
+                                        <label for="first_name">First Name</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="last_name" type="text" class="validate">
+                                        <label for="last_name">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="email" type="email" class="validate">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="input-field col s2 m2">
+                                        <input id="selectDate" name="selectDate" type="text" class="datepicker validate"
+                                            pattern="^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$">
+                                        <label for="selectDate">Select Start Date</label>
+                                        <div class="dropPick"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <select class="browser-default">
+                                        <option value="" disabled selected>Select number of users</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Add routing for new calendar -->
+                        <a href="#!"
+                            class="modal-action modal-submit waves-effect waves-red btn green lighten-1">Submit</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-1">Close</a>
+                    </div>
+                </div>
+                <!-- Join Modal Trigger -->
+                <div class="col l6 center-align">
+                    <button class="waves-effect waves-light btn-large modal-trigger" href="#join-modal">Join
+                        Calendar</button>
+                </div>
+                <!-- Join Modal Structure -->
+                <div id="join-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="first_name" type="text" class="validate">
+                                        <label for="first_name">First Name</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="last_name" type="text" class="validate">
+                                        <label for="last_name">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="email" type="email" class="validate">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <label for="cal-id">Calendar ID</label>
+                                        <input id="cal-id" type="number" class="validate">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/calendar"
+                            class="modal-action modal-submit waves-effect waves-red btn green lighten-1">Submit</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-1">Close</a>
+                    </div>
+                </div>
+                <!-- End Modals -->
+            </div>
+        </div>
+    </div>
+    <div id="pink-page" class="block lighten-1">
+        <nav class="pushpin-demo-nav" data-target="">
+            <div class="nav-wrapper pink-nav">
+                <a href="#" class="brand-logo" id="big-logo">Simple Calendar Sharing...</a>
+                <a href="#" class="center brand-logo" id="small-logo">Period</a>
+            </div>
+        </nav>
+        <div class="animated bounceInDown container">
+            <div class="row">
+                <div class="col m4">
+                </div>
+                <div class="col m4">
+                    <h1 class=""><strong>Who We Are</strong></h1>
+                </div>
+                <div class="col m4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l6 center-align">
+                    <img src="" alt="">
+                </div>
+                <div class="col l6">
+                    <p>You would think scheduling a meeting would be simple these days with all the technology we have
+                        at our finger tips.</p>
+                    <p>We were tired of IMing, taking polls, having meetings about meetings. We created a simple sharing
+                        platform, to allow the masses to connect. Set your availability, share your calendar, have your
+                        meeting. Period.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JS file -->
+<script type="text/javascript" src="js/homepage.js"></script>
+
+</html>
