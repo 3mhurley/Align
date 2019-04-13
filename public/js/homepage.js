@@ -7,7 +7,7 @@ $(document).ready(function() {
     autoClose: "true"
   });
 
-  $(".pushpin-demo-nav").each(function() {
+  $(".pushpin-nav").each(function() {
     var $this = $(this);
     var $target = $("#" + $(this).attr("data-target"));
     $this.pushpin({
