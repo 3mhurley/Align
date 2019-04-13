@@ -4,8 +4,8 @@ var userName = "Bob";
 var calendarId = 1234;
 var userEvents = [
   {
-    start: "2019-04-10T10:00:00",
-    end: "2019-04-10T16:00:00",
+    start: "2019-04-09T08:00:00-06:00",
+    end: "2019-04-09T09:30:00-06:00",
     rendering: "background",
     backgroundColor: colors[1]
   },
@@ -22,18 +22,30 @@ var userEvents = [
     backgroundColor: colors[1]
   }
 ];
+var events = [];
 
-function getSchedule() {
+function getSchedule(functionA) {
   var tempArray = [];
   $.get("/api/allSchedules", function(data) {
-    for (var i = 0; i < data.length; i++) {
-      tempArray.push(data[i]);
+    for (var i = 0; i < 1; i++) {
+      var tempEvent = {
+        //title: data[i]["username"],
+        start: data[i]["start"],
+        end: data[i]["end"],
+        rendering: "background",
+        backgroundColor: colors[i]
+      };
+      // console.log(tempEvent);
+      tempArray.push(tempEvent);
+      // console.log('array ' + i);
+      // console.log(tempArray);
+      events[0] = tempEvent;
     }
   });
-  return tempArray;
+  return functionA(events);
 }
-console.log(getSchedule());
 
+function makeCal(evnt) {
 
 function getSuggestions() {
   var startArray = [];
@@ -83,6 +95,8 @@ console.log(getSuggestions());
 // FullCalendar
 document.addEventListener("DOMContentLoaded", function() {
   var calendarEl = document.getElementById("calendar");
+  console.log('evnt');
+  console.log(evnt);
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     height: 600,
@@ -94,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay"
     },
-    events: userEvents,
+    events: evnt, 
     select: function(info) {
       calendar.addEvent({
         title: userName,
@@ -110,14 +124,10 @@ document.addEventListener("DOMContentLoaded", function() {
         end: info.endStr
       };
 
-      console.log(calendarId);
-      console.log(myEvent);
-
-      
-
       $.post("/api/schedules",myEvent)
         .then(function() {
           console.log("added new calendar");
+          //pass function to get suggestions?
           console.log(myEvent)
       });
 
@@ -148,4 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   calendar.render();
-});
+}
+
+// FullCalendar
+document.addEventListener("DOMContentLoaded", getSchedule(makeCal));
