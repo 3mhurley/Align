@@ -21,7 +21,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .pink-nav {
-  background-color: var(--main-color6);
+  background-color: var(--main-bg-color);
 }
 
 .blue-nav {
@@ -32,18 +32,23 @@ nav ul li a:hover, nav ul li a.active {
   padding-top: 250px;
 }
 
-h1 {
+.h1-top {
   color: var(--main-bg-color);
+  font-size: 60px;
+}
+.h1-bottom {
+  color: var(--main-color1);
   font-size: 50px;
 }
 
 p {
   font-size: 24px;
+  color: #4794B3;
 }
 
 .btn-large {
-  background-color: var(--main-color4) !important;
-  color: var(--main-bg-color) !important;
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-txt-color);
   height: 54px;
   width: 250px;
 }
@@ -62,19 +67,32 @@ p {
   transition: 0.2s;
 }
 
-#big-logo {
+#big-logo-top {
   padding-left: 20px;
   font-size: 36px;
+  color: var(--main-bg-color)
+}
+#big-logo-bottom {
+  padding-left: 20px;
+  font-size: 36px;
+  color: var(--main-color1)
 }
 
-#small-logo {
+#small-logo-top {
   font-size: 24px;
   margin-left: -350px;
   margin-top: 20px;
+  color: var(--main-bg-color)
+}
+#small-logo-bottom {
+  font-size: 24px;
+  margin-left: -350px;
+  margin-top: 20px;
+  color: var(--main-color1)
 }
 
 #pink-page {
-  background-color: var(--main-color6);
+  background-color: var(--main-bg-color)
 }
 
 #blue-page {
