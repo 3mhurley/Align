@@ -17,15 +17,21 @@ module.exports = function(app) {
   });
 
 
+  app.get("/api/suggestions", function(req, res) {
+    db.Schedules.findAll({include: [db.Calendars]}).then(function(dbSchedules) {
+      res.json(dbSchedules);
+    });
+  });
 //get route for retrieving suggestions
-  // app.get("/api/suggestions", function(req, res) {
-  //   db.Schedules.count({
-  //       group: ['start'], 
-  //       having: Sequelize.literal('count(start) > 1')
-  // }).then(function(dbSchedules) {
-  //   res.json(dbSchedules);
-  //   });
-  // });
+//   app.get("/api/suggestions", function(req, res) {
+//     db.Schedules.findAll({
+//       attributes: {
+//         include: [[sequelize.fn('COUNT', sequelize.col('start'))]]
+//       }
+//     }).then(function(dbSchedules) {
+//       res.json(dbSchedules);
+//     });
+//   });
 };
   //distinct?
   //return top three
