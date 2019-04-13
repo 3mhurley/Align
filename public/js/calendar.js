@@ -1,3 +1,5 @@
+//moment
+
 // calendar
 var colors = ["#abe198", "#f7ef99", "#f1bb87", "#f78e69", "#19535f"];
 var userName = "Bob";
@@ -68,11 +70,16 @@ function getSuggestions() {
     var count = {};
     sortedArray.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     console.log(count);
+    
 
     $.each(sortedArray, function(i, val) {
-      $("#best-times").append(sortedArray[i]);
-      // console.log(val);
-      //return (val !== 3);
+      //var formatedArray = [];
+      //var sortedArray = moment(sortedArray[i]).format('DD/MM/YYY');
+      //this.formatedArray.push(sortedArray);
+      //console.log(formatedArray);
+      $("#best-times").append('<p>' + sortedArray[i] + '</p>');
+      console.log(val);
+      return (val !== 3);
     });
   });
   
@@ -114,12 +121,10 @@ function makeCal(evnt) {
       $.post("/api/schedules",myEvent)
         .then(function() {
           console.log("added new calendar");
-          //pass function to get suggestions?
       });
     }
   });
 
-///////////////////////////////////////////////////////  
 
   calendar.render();
 }
