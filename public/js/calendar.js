@@ -69,8 +69,8 @@ function getSuggestions() {
     sortedArray.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     console.log(count);
 
-    $.each(count, function(i, val) {
-      $("#best-times").append(count[i]);
+    $.each(sortedArray, function(i, val) {
+      $("#best-times").append(sortedArray[i]);
       // console.log(val);
       //return (val !== 3);
     });
