@@ -34,6 +34,52 @@ function getSchedule() {
 }
 console.log(getSchedule());
 
+
+function getSuggestions() {
+  var startArray = [];
+  $.get("/api/suggestions", function(data) {
+    for (var i = 0; i < data.length; i++) {
+      startArray.push(data[i]["start"]);
+      // console.log(startArray)
+    }
+    var sortedArray = [];
+    var count = 1;
+  
+    sortedArray = startArray.sort();
+  
+    for (var i = 0; i < sortedArray.length; i = i + count) {
+      count = 1;
+      for (var j = i + 1; j < sortedArray.length; j++) {
+        count++;
+      }
+      //document.write(sortedArray[i] + " = " + count)
+      
+    } console.log(sortedArray);
+    var count = {};
+    sortedArray.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    console.log(count);
+
+    $.each(count, function(i, val) {
+      $("#best-times").append(count[i]);
+      // console.log(val);
+      //return (val !== 3);
+    });
+  });
+
+  
+  // return startArray;
+
+
+  // $("#best-times").empty();
+  //   for (var i = 0; i < sortedArray.length; i++) {
+  //     toAdd.push((sortedArray[i]));  
+  //   };
+  //   $("#best-times").append(toAdd);
+  
+}
+
+console.log(getSuggestions());
+
 // FullCalendar
 document.addEventListener("DOMContentLoaded", function() {
   var calendarEl = document.getElementById("calendar");
@@ -73,19 +119,12 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(function() {
           console.log("added new calendar");
           console.log(myEvent)
-          //pass function to get suggestions?
       });
+
     }
   });
 
 ///////////////////////////////////////////////////////  
-
-
-
-  // //suggestions
-  // var suggestions = [];
-  // //getting suggestions from database 
-  // getSuggestions();
 
 
   // //function to reset display with new suggestions from the db
@@ -98,13 +137,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //   $("#best-times").append(toAdd);
   // };
 
-  // //function grabbing suggestions from db and updating the view
-  // function getSuggestions() {
-  //   $.get("/api/suggestions", function(data) {
-  //     suggestions = data;
-  //     initializeList();
-  //   });
-  // };
 
   // //function to construct new suggestion row
   // function createSuggestion(suggestions) {
@@ -113,14 +145,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //   $("#best-times").append("<li> 2: " + suggestions + "<li>");
   //   $("#best-times").append("<li> 3: " + suggestions + "<li>"); 
   // }
-
-
-
-
-
-
-
-  
 
 
   calendar.render();
