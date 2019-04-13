@@ -1,4 +1,4 @@
-//moment
+
 
 // calendar
 var colors = ["#abe198", "#f7ef99", "#f1bb87", "#f78e69", "#19535f"];
@@ -73,13 +73,13 @@ function getSuggestions() {
     
 
     $.each(sortedArray, function(i, val) {
-      //var formatedArray = [];
-      //var sortedArray = moment(sortedArray[i]).format('DD/MM/YYY');
-      //this.formatedArray.push(sortedArray);
-      //console.log(formatedArray);
+      // var formatedArray = [];
+      // var sortedArray = moment(sortedArray[i]).format('DD/MM/YYY');
+      // this.formatedArray.push(sortedArray);
+      // console.log(formatedArray);
       $("#best-times").append('<p>' + sortedArray[i] + '</p>');
       console.log(val);
-      return (val !== 3);
+      return (val <= 4);
     });
   });
   
