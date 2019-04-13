@@ -3,30 +3,31 @@ var db = require("../models");
 module.exports = function(app) {
   
   // Get all times
-  // app.get("/api/calendar", function(req, res) {
-  //   db.Calendar.findAll({}).then(function(dbCalendar) {
-  //     res.json(dbCalendar);
-  //   });
-  // });
+  app.get("/api/allSchedules", function(req, res) {
+    db.Schedules.findAll({include: [db.Calendars]}).then(function(dbSchedules) {
+      res.json(dbSchedules);
+    });
+  });
 
   // post for adding times
-  app.post("/api/schedule", function(req, res) {
-    db.Schedule.create(req.body).then(function(dbSchedule) {
-      res.json(dbSchedule);
+  app.post("/api/schedules", function(req, res) {
+    db.Schedules.create(req.body).then(function(dbSchedules) {
+      res.json(dbSchedules);
     });
   });
 
 
 //get route for retrieving suggestions
-  app.get("/api/suggestions", function(req, res) {
-    db.Schedule.count({
-        group: ['start'], 
-        having: Sequelize.literal('count(start) > 1')
-  }).then(function(dbSchedule) {
-    res.json(dbSchedule);
-    });
-  });
+  // app.get("/api/suggestions", function(req, res) {
+  //   db.Schedules.count({
+  //       group: ['start'], 
+  //       having: Sequelize.literal('count(start) > 1')
+  // }).then(function(dbSchedules) {
+  //   res.json(dbSchedules);
+  //   });
+  // });
 };
-  
+  //distinct?
+  //return top three
 
 

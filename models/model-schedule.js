@@ -1,37 +1,40 @@
+var Sequelize = require("sequelize");
+
 module.exports = function(sequelize, DataTypes) {
-    var Schedule = sequelize.define("Schedule", {
+    var Schedules = sequelize.define("Schedules", {
     
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-      },
+      // id: {
+      //   type: Sequelize.INTEGER,
+      //   autoIncrement: true,
+      //   primaryKey: true,
+      // },
       cal_id: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
       username: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       },
       start: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       },
       end: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       }
     });
     
 
-    Schedule.associate = function(models) {
-      Schedule.belongsTo(models.Calendars, {
+    Schedules.associate = function(models) {
+      Schedules.belongsTo(models.Calendars, {
         foreignKey: {
           allowNull: false
         }
       });
     };
 
-    return Schedule;
+    return Schedules;
   };
   
