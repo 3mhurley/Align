@@ -1,5 +1,3 @@
-//moment
-
 // calendar
 var colors = ["#abe198", "#f7ef99", "#f1bb87", "#f78e69", "#19535f"];
 var userName = "Bob";
@@ -21,7 +19,7 @@ var userEvents = [
     start: "2019-04-11T10:00:00",
     end: "2019-04-11T15:00:00",
     rendering: "background",
-    backgroundColor: colors[0]
+    backgroundColor: colors[1]
   }
 ];
 var events = [];
@@ -70,16 +68,11 @@ function getSuggestions() {
     var count = {};
     sortedArray.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     console.log(count);
-    
 
-    $.each(sortedArray, function(i, val) {
-      //var formatedArray = [];
-      //var sortedArray = moment(sortedArray[i]).format('DD/MM/YYY');
-      //this.formatedArray.push(sortedArray);
-      //console.log(formatedArray);
-      $("#best-times").append('<p>' + sortedArray[i] + '</p>');
-      console.log(val);
-      return (val !== 3);
+    $.each(count, function(i, val) {
+      $("#best-times").append(count[i]);
+      // console.log(val);
+      //return (val !== 3);
     });
   });
   
@@ -102,7 +95,7 @@ function makeCal(evnt) {
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay"
     },
-    events: userEvents, 
+    events: evnt, 
     select: function(info) {
       calendar.addEvent({
         title: userName,
@@ -121,10 +114,12 @@ function makeCal(evnt) {
       $.post("/api/schedules",myEvent)
         .then(function() {
           console.log("added new calendar");
+          //pass function to get suggestions?
       });
     }
   });
 
+///////////////////////////////////////////////////////  
 
   calendar.render();
 }
