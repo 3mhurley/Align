@@ -1,7 +1,7 @@
 // calendar
 var colors = ["#abe198", "#f7ef99", "#f1bb87", "#f78e69", "#19535f"];
 var userName = "Bob";
-var calendarId = "1234abcd";
+var calendarId = 1234;
 var userEvents = [
   {
     start: "2019-04-10T10:00:00",
@@ -22,6 +22,17 @@ var userEvents = [
     backgroundColor: colors[1]
   }
 ];
+
+function getSchedule() {
+  var tempArray = [];
+  $.get("/api/allSchedules", function(data) {
+    for (var i = 0; i < data.length; i++) {
+      tempArray.push(data[i]);
+    }
+  });
+  return tempArray;
+}
+console.log(getSchedule());
 
 // FullCalendar
 document.addEventListener("DOMContentLoaded", function() {
@@ -47,55 +58,61 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
       var myEvent = {
-        calId: calendarId,
-        uName: userName,
+        cal_id: calendarId,
+        username: userName,
         start: info.startStr,
         end: info.endStr
       };
 
-      $.ajax("/api/schedule", {
-        type: "POST",
-        data: myEvent
-      }).then(function() {
-        console.log("added new calendar");
-        //pass function to get suggestions?
+      console.log(calendarId);
+      console.log(myEvent);
+
+      
+
+      $.post("/api/schedules",myEvent)
+        .then(function() {
+          console.log("added new calendar");
+          console.log(myEvent)
+          //pass function to get suggestions?
       });
     }
   });
 
 ///////////////////////////////////////////////////////  
 
-  //suggestions
-  var suggestions = [];
-  //getting suggestions from database 
-  getSuggestions();
 
 
-  //function to reset display with new suggestions from the db
-  function initializeList() {
-    //empty div before adding content
-    $("#best-times").empty();
-    for (var i = 0; i < suggestions.length; i++) {
-      toAdd.push(createSuggestion(suggestions[i]));  
-    };
-    $("#best-times").append(toAdd);
-  };
+  // //suggestions
+  // var suggestions = [];
+  // //getting suggestions from database 
+  // getSuggestions();
 
-  //function grabbing suggestions from db and updating the view
-  function getSuggestions() {
-    $.get("/api/suggestions", function(data) {
-      suggestions = data;
-      initializeList();
-    });
-  };
 
-  //function to construct new suggestion row
-  function createSuggestion(suggestions) {
-    //append with suggestions
-    $("#best-times").append("<li> 1: " + suggestions + "<li>");
-    $("#best-times").append("<li> 2: " + suggestions + "<li>");
-    $("#best-times").append("<li> 3: " + suggestions + "<li>"); 
-  }
+  // //function to reset display with new suggestions from the db
+  // function initializeList() {
+  //   //empty div before adding content
+  //   $("#best-times").empty();
+  //   for (var i = 0; i < suggestions.length; i++) {
+  //     toAdd.push(createSuggestion(suggestions[i]));  
+  //   };
+  //   $("#best-times").append(toAdd);
+  // };
+
+  // //function grabbing suggestions from db and updating the view
+  // function getSuggestions() {
+  //   $.get("/api/suggestions", function(data) {
+  //     suggestions = data;
+  //     initializeList();
+  //   });
+  // };
+
+  // //function to construct new suggestion row
+  // function createSuggestion(suggestions) {
+  //   //append with suggestions
+  //   $("#best-times").append("<li> 1: " + suggestions + "<li>");
+  //   $("#best-times").append("<li> 2: " + suggestions + "<li>");
+  //   $("#best-times").append("<li> 3: " + suggestions + "<li>"); 
+  // }
 
 
 
