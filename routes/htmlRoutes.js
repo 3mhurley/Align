@@ -8,8 +8,8 @@ module.exports = function(app) {
   });
 
   // create calendar  
-  app.get("/calendar", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/calendar.html"));
+  app.get("/calendarempty", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/calendarempty.html"));
   });
 
   // load calendar
