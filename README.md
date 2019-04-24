@@ -4,7 +4,12 @@
 
 We started here...
 
-![Wire Frame](public/images/Wireframe.png)
+<p align="left">
+  <img src="./public/images/readme/Wireframe.png" width="800" title="Website">
+</p>
 
 And got to here...
 
+<p align="left">
+  <img src="./public/images/readme/Website.png" width="800" title="Website">
+</p>
